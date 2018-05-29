@@ -1,0 +1,87 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.sensors, .video {
+	font-size: 0.75em;
+	position: relative;
+}
+#toggle-sensors,
+#toggle-video {
+	position: absolute;
+	right: 0.1em;
+	top: 0.1em;
+}
+
+.sensors > h1 {
+	display: none;
+}
+.sensors > section {
+	display: flex;
+	margin: 0em;
+	flex-wrap: wrap;
+}
+.sensors > section > * {
+	font-size: 1em;
+	line-height: 1em;
+	padding: 0.25em;
+	margin: 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.sensors > section > h1 {
+	flex-grow: 0;
+	flex-basis: 100%;
+	background: #888;
+	color: #fff;
+	font-weight: lighter;
+	text-transform: uppercase;
+}
+.sensors > section > div {
+	flex-grow: 1;
+	flex-basis: 1em;
+	box-shadow: 0 0 2em black inset;
+}
+.sensors .binary {
+	text-align: center;
+}
+.sensors .binary.on {
+	background: #0f0;
+	color: #fff;
+}
+.sensors .binary.off {
+	background: #f00;
+	color: #fff;
+}
+.sensors > p {
+	margin: 0.25em 1em;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+.body {
+	display: grid;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh
+}
+.body > .buttons {
+	grid-row: 1 / span 1;
+	grid-column: 1 / span 1;
+}
+.body > .sensors {
+	grid-row: 1 / span 2;
+	grid-column: 2 / span 1;
+}
+.body > .video {
+	grid-row: 2 / span 1;
+	grid-column: 1 / span 1;
+}
+
+.video > canvas {
+	 transform: rotate(180deg);
+}

@@ -1,0 +1,31 @@
+{
+  "name": "roomba.py",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Roomba.js",
+  "scripts": {
+    "test": "mocha --timeout 5000",
+    "start": "node src/server.js",
+    "dist": "cd video; npm install;",
+    "start-fake": "FAKE_ROOMBA=true node src/server.js"
+  },
+  "author": "Andrew Taylor <andrew@andrewt.net>",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^16.2.0",
+    "discify": "^1.6.2",
+    "express": "^4.16.3",
+    "h264-live-player": "^1.3.1",
+    "mime": "^2.2.2",
+    "mout": "^1.1.0",
+    "mz": "^2.7.0",
+    "serialport": "^6.1.1",
+    "socket.io": "^2.1.0",
+    "stream-split": "^1.1.0",
+    "ws": "^5.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.5",
+    "sinon": "^4.5.0"
+  }
+}

@@ -1,0 +1,44 @@
+#title-screen {
+	display: flex;
+}
+#title-screen > div {
+	flex-grow: 1;
+	background-image: url('doom-title.gif');
+	position: relative;
+	top: 0;
+	left: 0;
+	background-size: 100vw 100vh;
+	image-rendering: pixelated;
+}
+.playing > div {
+	transform: translate(0, 100vh);
+}
+
+.video {
+	overflow: hidden;
+}
+
+.video,
+#title-screen,
+#hud,
+.video > canvas {
+	position: absolute;
+	top: 0vh;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.body {
+	top: 100vh;
+}
+
+.video > canvas {
+	top: 6vh;
+	height: 72vh;
+	left: 5vw;
+	width: 90vw;
+}
+
+#hud {
+	image-rendering: pixelated;
+}

@@ -1,0 +1,13 @@
+{
+	"server": {
+		"port": 4000,
+		"videoPort": 4001
+	},
+	"roomba": {
+		"songLimit": 4
+	},
+	"wheelSpeedTolerance": 75,
+	"log": {
+		"verbose": true
+	}
+}

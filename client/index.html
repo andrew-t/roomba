@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roomba Control Panel</title>
+	<script type="text/javascript">
+		const config = {
+			speed: 500,
+			turnSpeed: 0.7,
+			reverse: false,
+			sensorInterval: 300
+		};
+	</script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="client.js"></script>
+	<script src="sensor-stream.js"></script>
+	<script src="gamepad.js"></script>
+	<script src="http-live-player.js"></script>
+	<script src="video.js"></script>
+	<script src="status-led.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="body">
+		<div class="buttons">
+			<button data-command="clean">Clean</button>
+			<button data-command="dock">Dock</button>
+			<button data-command="stop-cleaning">Stop Cleaning</button>
+			<br>
+			<button data-command="wake">Wake</button>
+			<button data-command="disconnect">Disconnect</button>
+			<button id="disconnect-gamepad">Disconnect Gamepad</button>
+		</div>
+		<section class="sensors">
+			<input type="checkbox" id="toggle-sensors">
+			<h1>Sensors</h1>
+			<section class="bump">
+				<h1>Bump</h1>
+				<div id="bump-left" class="binary">Left</div>
+				<div id="bump-right" class="binary">Right</div>
+			</section>
+			<section class="cliff">
+				<h1>Cliffs</h1>
+				<div id="cliff-left" class="binary">Left</div>
+				<div id="cliff-left-front" class="binary">Left Front</div>
+				<div id="cliff-right-front" class="binary">Right Front</div>
+				<div id="cliff-right" class="binary">Right</div>
+			</section>
+			<section class="wall">
+				<h1>Wall</h1>
+				<div id="wall" class="binary">Real</div>
+				<div id="wall-virtual" class="binary">Virtual</div>
+			</section>
+			<section class="wheel-drop">
+				<h1>Wheel Drop</h1>
+				<div id="wheel-drop-left" class="binary">Left</div>
+				<div id="wheel-drop-right" class="binary">Right</div>
+				<div id="wheel-drop-caster" class="binary">Caster</div>
+			</section>
+			<p>Charge:&nbsp;<span id="charge"></span>
+				(Capacity:&nbsp;<span id="charge-capacity"></span>)</p>
+			<p>Dirt Left:&nbsp;<span id="dirt-left"></span>;
+				Right:&nbsp;<span id="dirt-right"></span></p>
+			<p>Distance:&nbsp;<span id="distance"></span>;
+				Angle:&nbsp;<span id="angle"></span></p>
+			<section class="buttons">
+				<h1>Buttons</h1>
+				<div id="button-clean" class="binary">Clean</div>
+				<div id="button-max" class="binary">Max</div>
+				<div id="button-power" class="binary">Power</div>
+				<div id="button-spot" class="binary">Spot</div>
+			</section>
+			<section class="overcurrent">
+				<h1>Overcurrent</h1>
+				<div id="overcurrent-left" class="binary">Left</div>
+				<div id="overcurrent-right" class="binary">Right</div>
+				<div id="overcurrent-vacuum" class="binary">Vacuum</div>
+				<div id="overcurrent-brush" class="binary">Brush</div>
+				<div id="overcurrent-side-brush" class="binary">Side Brush</div>
+			</section>
+			<p>Voltage:&nbsp;<span id="voltage"></span>;
+				Current:&nbsp;<span id="current"></span>;
+				Temperature:&nbsp;<span id="temperature"></span></p>
+			<p>RC Command:&nbsp;<span id="rc-command"></span></p>
+		</section>
+		<section class="video">
+			<input type="checkbox" id="toggle-video">
+			<canvas id="video"></canvas>
+		</section>
+	</div>
+</body>
+</html>

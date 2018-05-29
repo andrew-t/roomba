@@ -1,0 +1,11 @@
+[Unit]
+Description=Roomba.js
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/env node /home/pi/roomba/src/video-server.js
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target

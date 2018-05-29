@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roomba Control Panel</title>
+	<script type="text/javascript">
+		const config = {
+			speed: 200,
+			turnSpeed: 0.7,
+			reverse: true,
+			sensorInterval: 300
+		};
+	</script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="client.js"></script>
+	<script src="doom-title.js"></script>
+	<script src="gamepad.js"></script>
+	<script src="http-live-player.js"></script>
+	<script src="fullscreen.js"></script>
+	<script src="video.js"></script>
+	<script src="status-led.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="doom-title.css">
+</head>
+<body>
+	<div class="body">
+		<div class="buttons">
+			<button data-command="clean">Clean</button>
+			<button data-command="dock">Dock</button>
+			<button data-command="stop-cleaning">Stop Cleaning</button>
+			<br>
+			<button data-command="wake">Wake</button>
+			<button data-command="disconnect">Disconnect</button>
+			<button id="disconnect-gamepad">Disconnect Gamepad</button>
+			<br>
+			<button id="fullscreen">Fullscreen</button>
+			<input type="checkbox" id="force-chrome-mode">
+			<label for="force-chrome-mode">Force Chrome Mode</label>
+		</div>
+	</div>
+	<section class="video" id="fullscreen-target">
+		<input type="checkbox" id="toggle-video" checked>
+		<canvas id="video"></canvas>
+		<img src="doom.png" id="hud">
+		<div id="title-screen"></div>
+	</section>
+</body>
+</html>

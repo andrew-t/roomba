@@ -1,0 +1,3 @@
+[submodule "video"]
+	path = video
+	url = git@github.com:andrew-t/h264-live-player.git
